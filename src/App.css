@@ -1,0 +1,11 @@
+@import "tailwindcss";
+
+@plugin "daisyui" {
+  themes: light --default;
+}
+
+.active {
+  color: #2C86FE;
+  background-color: transparent;
+  box-shadow: none;
+}
