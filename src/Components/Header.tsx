@@ -1,3 +1,4 @@
+import { FaMoon } from "react-icons/fa";
 import { Link, NavLink } from "react-router";
 
 export function Header() {
@@ -39,7 +40,7 @@ export function Header() {
         <li>
             <details>
             <summary>Portfilio</summary>
-            <ul className="p-2 bg-base-100 w-40 z-1">
+            <ul className="p-2 bg-base-100 w-50 z-1">
                 <li><a>Front-end Development</a></li>
                 <li><a>Back-end Development</a></li>
             </ul>
@@ -49,8 +50,9 @@ export function Header() {
         <li><a>Contact</a></li>
         </ul>
     </div>
-    <div className="navbar-end">
-        <a className="btn bg-[#2C86FE] text-white rounded-full w-[150px]">Contact Us</a>
+    <div className="navbar-end gap-3">
+        <a className="border border-gray-400 p-2 rounded-full border-3xl " href=""><FaMoon/> </a>
+        <a className="btn bg-[#2C86FE] text-white rounded-full w-[150px] xl:flex lg:flex md:flex hidden ">Contact Us</a>
     </div>
     </div>
 )}
