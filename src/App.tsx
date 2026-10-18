@@ -9,15 +9,15 @@ import { Contact } from './Pages/Contact'
 
 export function App() {
   const [theme, setTheme] = useState(() => {
-    const savedTheme = localStorage.getItem('portfolio-theme')
+    const savedTheme = localStorage.getItem('portfolio-theme-preference')
     return savedTheme === 'dark' || savedTheme === 'light'
       ? savedTheme
-      : window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light'
+      : 'light'
   })
 
   useEffect(() => {
     document.documentElement.dataset.theme = theme
-    localStorage.setItem('portfolio-theme', theme)
+    localStorage.setItem('portfolio-theme-preference', theme)
   }, [theme])
 
   return (
