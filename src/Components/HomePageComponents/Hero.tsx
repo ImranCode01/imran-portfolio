@@ -6,7 +6,7 @@ export function Hero() {
             <img
             data-aos="fade-left"
             alt="Tailwind CSS hero component"
-            src="../../../public/myImage.png" 
+            src="/myImage.png"
             className="xl:max-w-[600px] lg:max-w-[600px] md:max-w-[500px] sm:max-w-[500px] max-w-full"/><div>
 
             <h1 data-aos="fade-right" className="text-4xl font-bold xl:text-5xl lg:text-4xl md:text-4xl  xl:text-left lg:text-left md:text-left sm:text-center text-center">Front-End Developer</h1>
