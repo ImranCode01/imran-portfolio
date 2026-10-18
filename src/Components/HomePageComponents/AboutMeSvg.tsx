@@ -1,6 +1,6 @@
 export function AboutMeSvg() {
     return (
-        <svg
+        <svg className="lg:hidden xl:flex  md:hidden sm:hidden hidden xl:mb-[100px] xl:w-300"
   width="820"
   height="680"
   viewBox="0 0 820 680"
