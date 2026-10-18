@@ -1,31 +1,17 @@
-import { FaBriefcase, FaGraduationCap, FaLaptopCode  } from "react-icons/fa";
+import { FaBriefcase, FaGraduationCap, FaLaptopCode } from "react-icons/fa";
+
+const stats = [
+  { label: "Completed projects", value: "+1", icon: <FaLaptopCode /> },
+  { label: "Years experience", value: "2+", icon: <FaBriefcase /> },
+  { label: "Qualification", value: "Full-Stack Developer", icon: <FaGraduationCap /> },
+];
 
 export function Degree() {
-    return (
-<div className="stats flex shadow w-full xl:flex-row lg:flex-row md:flex-row sm:flex-row flex-col">
-    <div className="stat flex flex-col text-center">
-        <div className="stat-figure text-[#2C86FE]">
-            <FaLaptopCode className="xl:text-4xl lg:text-4xl"/>    
-        </div>
-        <div className="stat-title font-bold text-[16px] " >Completed Projects</div>
-        <div className="stat-value xl:text-[22px] lg:text-[18px] md:text-[18px] sm:text-[18px] text-[14px]">+1</div>
-    </div>
-
-    <div className="stat flex flex-col text-center">
-        <div className="stat-figure text-[#2C86FE]">
-            <FaBriefcase className="xl:text-4xl lg:text-4xl"/>    
-        </div>
-        <div className="stat-title font-bold text-[16px] " >Years Experince</div>
-        <div className="stat-value xl:text-[22px] lg:text-[18px] md:text-[18px] sm:text-[18px] text-[14px]">2+</div>
-    </div>
-
-    <div className="stat flex flex-col text-center">
-        <div className="stat-figure text-[#2C86FE]">
-            <FaGraduationCap className="xl:text-4xl lg:text-4xl"/>    
-        </div>
-        <div className="stat-title font-bold text-[16px] " >Qualification</div>
-        <div className="stat-value xl:text-[22px] lg:text-[18px] md:text-[18px] sm:text-[18px] text-[14px]">Front-End Developer</div>
-    </div>
-</div>
-    )
+  return <div className="grid grid-cols-1 gap-3 sm:grid-cols-3">
+    {stats.map(({ label, value, icon }) => <div key={label} className="rounded-2xl border border-base-300 bg-base-100 p-4 text-center shadow-sm sm:p-5">
+      <div className="mb-3 flex justify-center text-2xl text-primary" aria-hidden="true">{icon}</div>
+      <div className="text-xs font-semibold uppercase tracking-wide text-base-content/60">{label}</div>
+      <div className="mt-2 text-lg font-bold leading-snug text-base-content">{value}</div>
+    </div>)}
+  </div>;
 }

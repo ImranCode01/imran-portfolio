@@ -1,43 +1,32 @@
-import { Link } from "react-router"
+import { FaFacebookF, FaGithub, FaInstagram, FaLinkedinIn } from "react-icons/fa";
+import { Link, NavLink } from "react-router";
 
-export function Footer() {
-    return (
-        <footer className="footer sm:footer-horizontal bg-base-200 text-base-content p-10 s">
-        <aside className="gap-0 flex flex-col">
-            {/* <img className="w-[200px] p-0 m-0 h-auto" src="../../public/dark logo.png" alt="" /> */}
-            <Link to="/">
-            <img
-                src="/dark logo.png"
-                alt="Logo"
-                className="w-[180px] m-0"
-            />
-            </Link>
-            <p>
-            ACME Industries Ltd.
-            <br />
-            Providing reliable tech since 1992
-            </p>
-        </aside>
-        <nav>
-            <h6 className="footer-title text-[#2C86FE]">Services</h6>
-            <a className="link link-hover">Branding</a>
-            <a className="link link-hover">Design</a>
-            <a className="link link-hover">Marketing</a>
-            <a className="link link-hover">Advertisement</a>
+export function Footer({ theme }: { theme: string }) {
+  return (
+    <footer className="border-t border-base-300 bg-base-200/70">
+      <div className="mx-auto grid max-w-7xl gap-10 px-5 py-12 sm:px-8 md:grid-cols-[1.4fr_1fr_1fr] md:py-14">
+        <div className="space-y-4">
+          <Link to="/" aria-label="Imran Yaqobi home"><img src={theme === "dark" ? "/white logo.png" : "/dark logo.png"} alt="Imran Yaqobi" className="w-40" /></Link>
+          <p className="max-w-sm text-sm leading-6 text-base-content/70">Full-stack developer focused on thoughtful, responsive web experiences.</p>
+          <div className="flex gap-3 text-lg" aria-label="Social links">
+            <a className="btn btn-ghost btn-circle btn-sm" href="https://github.com/ImranCode01" target="_blank" rel="noreferrer" aria-label="GitHub"><FaGithub /></a>
+            <a className="btn btn-ghost btn-circle btn-sm" href="https://www.linkedin.com/in/imran-undefined-53296232a/" target="_blank" rel="noreferrer" aria-label="LinkedIn"><FaLinkedinIn /></a>
+            <a className="btn btn-ghost btn-circle btn-sm" href="https://instagram.com/imranyaq0bi?rpxt=aDN4a2QwNjNxcm05" target="_blank" rel="noreferrer" aria-label="Instagram"><FaInstagram /></a>
+            <a className="btn btn-ghost btn-circle btn-sm" href="https://www.facebook.com/iyaqobi" target="_blank" rel="noreferrer" aria-label="Facebook"><FaFacebookF /></a>
+          </div>
+        </div>
+        <nav className="flex flex-col items-start gap-3" aria-label="Footer navigation">
+          <h2 className="mb-1 text-sm font-bold uppercase tracking-wider text-primary">Explore</h2>
+          <NavLink className="link link-hover text-sm" to="/">Home</NavLink>
+          <NavLink className="link link-hover text-sm" to="/about">About</NavLink>
+          <NavLink className="link link-hover text-sm" to="/contact">Contact</NavLink>
         </nav>
-        <nav>
-            <h6 className="footer-title text-[#2C86FE]">Company</h6>
-            <a className="link link-hover">About us</a>
-            <a className="link link-hover">Contact</a>
-            <a className="link link-hover">Jobs</a>
-            <a className="link link-hover">Press kit</a>
-        </nav>
-        <nav>
-            <h6 className="footer-title text-[#2C86FE]">Legal</h6>
-            <a className="link link-hover">Terms of use</a>
-            <a className="link link-hover">Privacy policy</a>
-            <a className="link link-hover">Cookie policy</a>
-        </nav>
-        </footer>
-    )
+        <div className="flex flex-col items-start gap-3">
+          <h2 className="mb-1 text-sm font-bold uppercase tracking-wider text-primary">Get in touch</h2>
+          <Link className="link link-hover text-sm" to="/contact">Let’s talk about your next project</Link>
+          <span className="mt-3 text-xs text-base-content/55">© {new Date().getFullYear()} Imran Yaqobi</span>
+        </div>
+      </div>
+    </footer>
+  );
 }
